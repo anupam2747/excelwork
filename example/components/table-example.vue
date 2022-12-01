@@ -13,7 +13,7 @@
         </thead>
         <draggable v-model="list" tag="tbody"> 
           <tr v-for="item in list" :key="item.name">
-            <td v-for="(header, idx) in headers" :key="header"><input type="text" name="id" :id="idx" :value="item[header]"></td>
+            <td v-for="(header, idx) in headers" :key="header"><input type="text" name="id" :id="idx" :value="item[header]" ></td>
             <i class="fa fa-times close" @click="removeAt(idx)"></i>
           </tr>
         </draggable>
@@ -26,23 +26,24 @@
 
 <script>
 import draggable from "@/vuedraggable";
+import "vuetify/dist/vuetify.min.css";
 export default {
   name: "table-example",
   display: "Table",
   order: 8,
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
-      headers: ["id", "name", "sport"], 
+      headers: ["id", "name", "sport"],
       list: [
         { id: 1, name: "anupam", sport: "basket" },
         { id: 2, name: "Brooke", sport: "foot" },
         { id: 3, name: "Courtenay", sport: "volley" },
-        { id: 4, name: "David", sport: "rugby" }
+        { id: 4, name: "David", sport: "rugby" },
       ],
-      dragging: false
+      dragging: false,
     };
   },
   methods:{
@@ -54,21 +55,23 @@ export default {
         return object.id;
       });
       let maxID = Math.max(...ids);
-      maxID++
+      maxID++;
       this.list.push({ id:maxID, name:"", sport: "" });
-    }
+    },
 
-  }
-}; 
+  },
+};
 </script>
 <style scoped>
 .buttons {
   margin-top: 35px;
 }
+ /* eslint-disable */
 .close {
   float: right;
   padding-top: 14px;
   padding-bottom: 8px;
 }
+
 
 </style>
