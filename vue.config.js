@@ -19,3 +19,9 @@ if (process.env.NODE_ENV === "production") {
 };
 
 module.exports = config;
+
+module.exports = {
+  devServer: {
+      port: 3454
+  }
+}

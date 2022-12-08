@@ -6,6 +6,7 @@ const routes = ctx.keys().map(key => ({
 
 routes.push({
   path: "/",
-  redirect: "./table-example"
+  redirect: "./excel"
 });
 export default routes;
+ 
