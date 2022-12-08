@@ -67,7 +67,7 @@ export default {
      var dataValue = e.currentTarget.getAttribute('data-value');
      var dataId= e.currentTarget.getAttribute('data-id');
      var checkbox = 'checkbox';
-     await Vue.axios.post("http://localhost/excelapi/api/excel/listPostData",{name:columnname,value:dataValue,id:dataId,checkboxvalue:checkbox})
+     await Vue.axios.post("https://codeyiizen.com/dev/excelapi/api/excel/listPostData",{name:columnname,value:dataValue,id:dataId,checkboxvalue:checkbox})
      .then(resp=>{
       console.log(resp);
      });
@@ -90,7 +90,7 @@ export default {
      var dataValue = e.target.value;
      var dataId= e.currentTarget.getAttribute('data-id');
      var checkbox = 'inputbox';
-     await Vue.axios.post("http://localhost/excelapi/api/excel/listPostData",{name:columnname,value:dataValue,id:dataId,checkboxvalue:checkbox})
+     await Vue.axios.post("https://codeyiizen.com/dev/excelapi/api/excel/listPostData",{name:columnname,value:dataValue,id:dataId,checkboxvalue:checkbox})
      .then(resp=>{
       console.log(resp);
      });
@@ -98,11 +98,11 @@ export default {
     }
   },
   mounted(){
-     Vue.axios.get("http://localhost/excelapi/api/excel/listTask")
+     Vue.axios.get("https://codeyiizen.com/dev/excelapi/api/excel/listExceldata")
      .then(resp=>{
       this.list = resp.data.result;
      }),
-     Vue.axios.get("http://localhost/excelapi/api/excel/listheader")
+     Vue.axios.get("https://codeyiizen.com/dev/excelapi/api/excel/listheader")
      .then(resp=>{
       this.headers = resp.data.result;
      })
